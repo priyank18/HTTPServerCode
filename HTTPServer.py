@@ -14,9 +14,9 @@ while True:
     try:
         message = connectionSocket.recv(1024)
         filename = message.split()[1]
-        file = open(filename[1:],'rb')
-        outputdata = file.read()
-        file.close()
+        file_content = open(filename[1:],'rb')
+        outputdata = file_content.read()
+        file_content.close()
         
         #Send one HTTP header line into socket
         connectionSocket.send('HTTP/1.0 200 OK\r\n\r\n')
